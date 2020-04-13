@@ -1,0 +1,128 @@
+.header-container{
+    height:80vh;
+    background: url(/assets/images/header.jpg) no-repeat;
+    background-size: cover;
+	background-attachment:fixed;
+
+}
+.mobile-header-container{
+    height: 100vh;
+}
+.join-now.container{
+    padding: 35px 115px;
+}
+.sign-in{
+    height:50px;
+    width:150px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    margin-top: 25px;
+    border-radius: 5px;
+    margin-left:50px;
+    cursor: pointer;
+
+
+}
+
+
+.join-now{
+    height:50px;
+    width:150px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    margin-top: 25px;
+    border-radius: 5px;
+    margin-left:30px;
+    cursor: pointer;
+
+}
+.mat-display-1{
+    padding: 50px;
+    padding-bottom: 0px;
+    color: white;
+}
+
+.content-container h4{
+    padding-left: 50px;
+    padding-top: 0px;
+    color: white;
+    font-size: 16px;
+
+}
+
+.search-div{
+    background-color: grey;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-radius: 15px;
+    padding-top: 20px;
+}
+
+.search{
+    margin-left: 25px;
+    width: 30%;
+    color: white;
+    
+}
+
+.mobile-container{
+    margin: 8px 16px;
+}
+.minitab-container{
+    margin-top: 5%;
+}
+
+.mobile-form-field, .minitab-form-field{
+    width:80%;
+}
+
+
+.search-button{
+    height:50px;
+    width:150px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    margin-bottom:15px;
+    border-radius: 8px;
+    margin-left:30px;
+    cursor: pointer;
+    
+}
+
+.feature-container{
+    margin-top: 3%;
+}
+.feature-container h1{
+    color: black;
+}
+.mobile-feature-container{
+    margin-top: 33%;
+}
+.minitab-feature-container{
+    margin-top: 15%;
+}
+
+.tab-feature-container{
+    margin-top: 5%;
+}
+
+.card{
+    margin: 20px;
+    text-align: center;
+    border-color: 10px solid green;
+    padding: 10px;
+}
+
+.card-img{
+    width:350px;
+    height: 200px;
+    align-self: center;
+
+}

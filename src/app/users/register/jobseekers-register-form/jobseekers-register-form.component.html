@@ -1,0 +1,150 @@
+<div class="container">
+    <h1 class="text-center" id="header-text"> Create a Job Seeker Account </h1>
+    <p class="text-center">Get started to get jobs</p>
+    <hr>
+    <div class="form">
+        <form [formGroup]="jobseekersForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+            <div class="row">
+
+                <div class="form-group col-lg-4 col-sm-12">
+                    <label for="firstName">First Name:</label>
+                    <input (ngModel)="firstName" formControlName="firstName" id="firstName" type="text" class="form-control"
+                        placeholder="First Name..." required />
+                </div>
+
+                <div class="form-group col-lg-4 col-sm-12">
+                    <label for="lastName">Last Name:</label>
+                    <input (ngModel)="lastName" formControlName="lastName" id="lastName" type="text" class="form-control"
+                        placeholder="Last Name..." required/>
+                </div>
+
+                <div class="form-group col-lg-4 col-sm-12">
+                    <label for="otherName">Other Name:</label>
+                    <input (ngModel)="otherName" formControlName="otherName" id="otherName" type="text" class="form-control"
+                        placeholder="Other Name..." required/>
+                </div>
+
+
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-lg-5 col-sm-12">
+                    <label for="email">Email:</label>
+                    <input (ngModel)="email" formControlName="email" id="email" type="email" class="form-control"
+                        placeholder="Email..." required/>
+                </div>
+
+                <div class="form-group col-lg-5 col-sm-12">
+                    <label for="gender">Gender:</label>
+                    <select (ngModel)="gender" formControlName="gender" id="gender" type="gender" class="form-control"
+                        placeholder="select.." required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group col-lg-4 col-sm-12">
+                    <label for="dob">Date Of Birth:</label>
+                    <input (ngModel)="dob" formControlName="dob" id="dob" type="date" class="form-control" required/>
+                </div>
+
+                <div class="form-group col-lg-4 col-sm-12">
+                    <label for="Nationality">Country Of residence:</label>
+                    <select (ngModel)="country" formControlName="country" id="country" type="text" class="form-control"
+                        placeholder="Nationality..." required>
+                        <option value="nigeria">Nigeria</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-lg-4 col-sm-12">
+                    <label for="state">State:</label>
+                    <select (ngModel)="state" formControlName="state" id="state" type="text" required class="form-control" placeholder="state...">
+                        <option value="edo">Edo state</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+               
+
+                <div class="form-group col-lg-4 col-sm-12">
+                    <label for="contact_number">mobile number:</label>
+                    <input (ngModel)="contact_number" required formControlName="contact_number" id="contact_number" type="number" class="form-control" />
+                    <small id="phone-hint" class="hint">please include country code</small>
+                </div>
+
+                <div class="form-group col-lg-4 col-sm-12">
+                        <label for="qualification">Qualification:</label>
+                        <select (ngModel)="qualification" required formControlName="qualification" id="qualification" type="text" class="form-control">
+                            <option value="bsc">BSC</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group col-lg-4 col-sm-12">
+                        <label for="profession">Profession:</label>
+                        <input (ngModel)="profession" required formControlName="profession" id="profession" type="text" class="form-control"
+                            placeholder="E.g: software developer" />
+                    </div>
+    
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-lg-5 col-sm-12">
+                    <label for="password">password:</label>
+                    <input (ngModel)="password" required formControlName="password" id="password" type="password" class="form-control" />
+                    <small id="password-hint" class="hint">minimum of 8 characters</small>
+                </div>
+
+                <div class="form-group col-lg-5 col-sm-12">
+                    <label for="confirmPassword">Confirm password:</label>
+                    <input required appConfirmEqualValidator="password" formControlName="confirmPassword" id="confirmPassword" type="password" class="form-control" />
+                    <span class="help-block">
+                        passwords do not match
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <input (ngModel)="allow_mail" type="checkbox" class="form-check-input" id="check" formControlName="allow_mail" value="true"/>
+                <label  for="allow_mail" >I would like to receive job alerts and career tips</label>
+            </div>
+
+            <ngx-spinner bdcolor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+                <p style="font-size:20px; color:white;">Processing....</p>
+
+            </ngx-spinner>
+
+            <div class="button-div" fxLayout="row" fxLayout="column" fxLayoutAlign="center center">
+                <button type="submit" class="button" (click)="showSpinner()">Create Account</button>
+
+                <div>
+                    <p class="after-button" style="text-align:center;"> By clicking <i>Create Account</i>, you agree to
+                        our <a routerLink="">TERMS &
+                            CONDITIONS</a> and <a routerLink="">PRIVACY</a></p>
+                    <p class="change_link" style="text-align:center;">
+                        Already a member?
+                        <a routerLink="" class="to_login"> Log in</a>
+                    </p>
+
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
+
+
+
+
+
+

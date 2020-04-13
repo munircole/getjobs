@@ -1,0 +1,88 @@
+<div class="header-container" ngClass.sm="mobile-header-container" ngClass.xm="mobile-header-container">
+    <div class="headline-container">
+        <h1 class="mat-display-1">
+            GetJobs for a better future
+        </h1>
+    </div>
+    <div class="content-container">
+        <h4>
+            We will boost your skills and profile,<br>
+            provide you with personalized career guidance and <br>
+            match you with the right opportunities,so that you can be the best and the brightest
+        </h4>
+
+    </div>
+    <div class="join-now-container">
+        <div fxLayout="column" fxLayout="row" fxLayoutAlign="left left">
+            <button class="sign-in">
+                Sign in
+            </button>
+            <button class="join-now">
+                Join Now
+            </button>
+        </div>
+    </div>
+    <div class="search-div" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap.gt.xs="2%"
+        fxLayoutAlign="center center" ngClass.xs="mobile-container" ngClass.sm="minitab-container">
+
+        <div class="form-group col-lg-5 col-sm-12">
+            <input  required  id="job_title"
+                type="text" class="form-control" placeholder="job title..." />
+        </div>
+
+        <div class="form-group col-lg-5 col-sm-12">
+            <select   id="location" type="text" class="form-control"
+                placeholder="Select location.." required>
+                <option value="software developer">software developer</option>
+            </select>
+        </div>
+
+        <button class="search-button">Search</button>
+
+    </div>
+
+</div>
+<div class="feature-container" ngClass.xs="mobile-feature-container" ngClass.sm="minitab-feature-container"
+    ngClass.md="tab-feature-container">
+    <div class="how-it-works" fxLayout="row" fxLayout="column" fxLayoutAlign="center center">
+        <h1>Why Choose GetJobs?</h1>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-lg-4 col-sm-12">
+            <div class="card">
+                <img class="card-img" src="../../../assets/images/rocket.jpg">
+                <div class="card-body">
+                    <h3 class="card-title"> It's Hassle Free</h3>
+                    <p class="card-text">All you have to do is just sign up once and get to apply to hundreds
+                        of jobs, hundreds of company can also directly engage with you</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-lg-4 col-sm-12">
+            <div class="card" ngClass.sm="mobile-card" ngClass.xm="mini-card">
+                <img class="card-img" src="../../../assets/images/user.png">
+                <div class="card-body">
+                    <h3 class="card-title">Professional Assistance </h3>
+                    <p class="card-text">Our talent advocates will provide assisstance and advice through out
+                        the recruitment process untill you get hired</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-lg-4 col-sm-12">
+            <div class="card" ngClass.sm="mobile-card" ngClass.xm="mini-card">
+                <img class="card-img" src="../../../assets/images/camera.jpg">
+                <div class="card-body">
+                    <h3 class="card-title"> Profile Privacy </h3>
+                    <p class="card-text">Your profile will only be visible to you and employers whose jobs you
+                        applied to. Your peace of mind is our objective</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

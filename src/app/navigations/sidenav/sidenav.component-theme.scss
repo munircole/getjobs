@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+@mixin sidenav-component-theme($getjobs-theme) {
+
+    $primary: map-get($getjobs-theme, primary );
+    $accent: map-get($getjobs-theme, accent);
+
+    .mat-list-option:hover,
+    .mat-list-option.mat-list-item-focus,
+    .mat-nav-list .mat-list-item:hover,
+    .mat-nav-list .mat-list-item.mat-list-item-focus{
+        background-color: mat-color($getjobs-primary, 200);
+        color:mat-color($getjobs-primary, 700);
+    }
+
+}

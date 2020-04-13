@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$getjobs-primary: mat-palette($mat-green, A700);
+$getjobs-accent: mat-palette($mat-green, 700);
+
+$getjobs-warn: mat-palette($mat-red);
+$getjobs-theme: mat-light-theme($getjobs-primary, $getjobs-accent, $getjobs-warn);
+
+// scss imports for sidenav
+@import './app/navigations/sidenav/sidenav.component-theme.scss';
+@include sidenav-component-theme($getjobs-theme);
+
+//scss imports for navbar
+@import './app/navigations/navbar/navbar.component.scss';
+@include navbar-component($getjobs-theme);
+
+
+@include angular-material-theme($getjobs-theme);
+

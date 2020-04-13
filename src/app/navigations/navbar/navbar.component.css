@@ -1,0 +1,60 @@
+.logo-container{
+    width: 100%;
+}
+.logo{
+    margin-left: 15px;
+    margin-top: 20px;
+
+}
+
+button{
+    background-color: transparent;
+    border:none;
+    margin-top: 8px;
+}
+
+.mobile-sign-in span{
+    display: none;
+}
+
+.large-sign-in mat-icon{
+    display: none;
+}
+
+.large-sign-up mat-icon{
+    display: none;
+}
+
+
+
+.menu-div{
+    margin-right:8px; 
+}
+
+.menu-div  a{
+    text-decoration: none;
+    color: green;
+}
+.menu-span{
+    padding-left: 5px;
+    padding-bottom:15px; 
+}
+
+.post-job{
+    height:40px;
+    width:200px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left:50px;
+}
+
+.post-job a{
+    color: white;
+}
+.post-job-container{
+    display: none;
+}

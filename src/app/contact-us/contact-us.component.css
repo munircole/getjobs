@@ -1,0 +1,35 @@
+.container{
+    margin-top: 50px;
+}
+
+.briefcase{
+    height: 100px;
+    width: 100px;
+}
+
+.button{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height:50px;
+    width:150px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    border-radius: 30px;
+    cursor: pointer;
+    
+
+}
+
+.contact{
+    margin-top: 50px;
+}
+
+.contact1{
+    margin-right: 20px;
+}
+
+h2, h4, h5{
+    text-align: center;
+}

@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 class="text-center" id="header-text"> Rate Us </h1>
+    <h3 class="text-center">This will help us improve and serve you better</h3>
+    <hr>
+    <div class="rateUsForm" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="center center">
+        <div class="col-lg-6 col-sm-12">
+            <form [formGroup]="rateUsForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+                <div class="form-group">
+                    <ngb-rating  formControlName="rate" (ngModel)="form.rate">
+                        <ng-template let-fill="fill" let-index="index">
+                            <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+                    <div class="form-text small">
+                        <div *ngIf="rate.valid" class="text-success">thanks</div>
+                        <div *ngIf="rate.invalid" class="text-danger">Please rate us</div>
+                    </div>
+                    <hr>
+                    <pre>Rate: <b>{{rate.value}}</b></pre>
+                </div>
+
+                <div class="form-group">
+                    <textarea (ngModel)="form.message" name="message" required id="message" type="message"
+                        formControlName="message" class="form-control" placeholder="Message..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input (ngModel)="form.email" name="email" required id="email" type="email" formControlName="email"
+                        class="form-control" placeholder="Your Email..." required />
+                    <small class="hint" id="rate-message-hint">maximum of 200 characters</small>
+                </div>
+
+
+                <div class="button-div" fxLayout="row" fxLayout="column" fxLayoutAlign="center center">
+                    <button type="submit" class="button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>

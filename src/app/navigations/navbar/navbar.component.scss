@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+
+@mixin navbar-component($getjobs-theme) {
+
+    $primary: map-get($getjobs-theme, primary );
+    $accent: map-get($getjobs-theme, accent);
+
+    .navbar-container{
+        background-color: white;
+        border-bottom: 1px solid green;
+    }
+
+    
+    .logo{
+        color: mat-color($getjobs-primary);
+    }
+
+    a{
+        color: mat-color($getjobs-primary);
+    }
+
+}

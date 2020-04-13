@@ -1,0 +1,40 @@
+
+.container{
+    margin-top: 50px;
+}
+
+
+.star{
+    font-size: 1.5rem;
+    color:  #b0c4de;
+}
+
+.filled{
+    color: green;
+}
+
+.bad{
+    color: red;
+}
+
+.filled.bad{
+   color:firebrick;
+}
+
+#message{
+    columns: 10;
+}
+
+.button{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    height:50px;
+    width:200px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    cursor: pointer;
+    
+
+}

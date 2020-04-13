@@ -1,0 +1,10 @@
+.container{
+    margin-top: 50px;
+    padding: 20px;
+    background: white;
+    margin-bottom: 50px;
+}
+
+h1, h3, h5{
+    font-weight: bolder;
+}

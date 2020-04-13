@@ -1,0 +1,37 @@
+.container{
+    margin-top: 50px;
+    padding: 50px;
+    background: #ffffff;
+}
+
+.card{
+    margin-top: 30px;
+    text-align: center;
+    border-color: 10px solid green;
+    padding: 10px;
+}
+
+img{
+    height:200px;
+    width: 150px;
+    align-self: center;
+}
+.mobile-card{
+    margin-top: 20px;
+}
+.mini-card{
+    margin-top: 50px;
+}
+
+.button{
+    margin-top: 20px;
+    height:50px;
+    width:200px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    border-radius: 30px;
+    cursor: pointer;
+
+}

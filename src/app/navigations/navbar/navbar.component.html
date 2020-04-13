@@ -1,0 +1,38 @@
+<mat-toolbar class="navbar-container">
+    <div>
+        <button mat-icon-button (click)="onToggleOpenSidenav()">
+            <mat-icon class="menu-icon">menu</mat-icon>
+        </button>
+    </div>
+    <div class="logo-container">
+        <a routerLink="">
+            <p class=" logo">GetJobs</p>
+        </a>
+    </div>
+    <div>
+        <div fxLayout="row" fxLayout="row" fxLayoutAlign="right right" class="menu-div">
+            <button mat-button class="sign-in" ngClass.lg="large-sign-in" ngClass.xs="mobile-sign-in">
+                <a mat-button routerLink="/user/login">
+                    <mat-icon>input</mat-icon>
+                    <span class="menu-span">SIGN IN</span>
+                </a>
+            </button>
+
+            <button mat-button class="sign-up" ngClass.lg="large-sign-up" ngClass.xs="mobile-sign-in">
+                <a mat-button routerLink="/user/register">
+                    <mat-icon>account_circle</mat-icon>
+                    <span class="menu-span">SIGN UP</span>
+                </a>
+            </button>
+
+            <button mat-button class="post-job" ngClass.xs="post-job-container"ngClass.sm="post-job-container">
+                <a mat-button routerLink="#">
+                    <span class="menu-span">POST A JOB</span>
+                </a>
+            </button>
+
+
+        </div>
+
+    </div>
+</mat-toolbar>

@@ -1,0 +1,52 @@
+<div class="container">
+    <h1 class="text-center"> Login </h1>
+    <hr>
+    <div class="loginform" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="center center">
+        <div class="col-lg-6 col-sm-12">
+
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input [(ngModel)]="form.email" name="email" required id="email" type="text" class="form-control"
+                        placeholder="Email..." required />
+                    <div class="error" *ngIf="loginForm.controls.email?.invalid && loginForm.controls.email?.touched" ||
+                        mouseoverLogin>Required</div>
+
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <em *ngIf="loginForm.controls.password?.invalid && loginForm.controls.password?.touched" ||
+                        mouseoverLogin>Required</em>
+                    <input [(ngModel)]="form.password" name="password" required id="password" type="password"
+                        class="form-control" placeholder="Password..." required />
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check" name="keep_loggedIn">
+                    <label for="keep_loggedIn">Keep me logged in</label>
+                </div>
+                <p class="change_link">
+                    <a routerLink=""> Forgot Password?</a>
+                </p>
+
+
+
+
+                <div class="button-div" fxLayout="row" fxLayoutAlign="center center" (mouseenter)="mouseoverLogin=true"
+                    (mouseleave)="mouseoverLogin=false">
+                    <button type="submit" class="button" [disabled]="!loginForm.valid">Login</button>
+                </div>
+                <p class="change_link1">
+                    Dont have an account?
+                    <a routerLink=""> Create Account</a>
+                </p>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+
