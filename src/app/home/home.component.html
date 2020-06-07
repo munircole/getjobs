@@ -14,10 +14,10 @@
     </div>
     <div class="join-now-container">
         <div fxLayout="column" fxLayout="row" fxLayoutAlign="left left">
-            <button class="sign-in">
+            <button class="sign-in" routerLink="/user/login">
                 Sign in
             </button>
-            <button class="join-now">
+            <button class="join-now" routerLink="/user/register">
                 Join Now
             </button>
         </div>
@@ -25,12 +25,12 @@
     <div class="search-div" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap.gt.xs="2%"
         fxLayoutAlign="center center" ngClass.xs="mobile-container" ngClass.sm="minitab-container">
 
-        <div class="form-group col-lg-5 col-sm-12">
+        <div class="form-group col-lg-5 col-md-5 col-sm-12">
             <input  required  id="job_title"
                 type="text" class="form-control" placeholder="job title..." />
         </div>
 
-        <div class="form-group col-lg-5 col-sm-12">
+        <div class="form-group col-lg-5 col-md-5 col-sm-12">
             <select   id="location" type="text" class="form-control"
                 placeholder="Select location.." required>
                 <option value="software developer">software developer</option>

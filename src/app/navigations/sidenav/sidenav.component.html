@@ -1,43 +1,49 @@
 <mat-nav-list class="sidenav">
 
 
-    <p mat-list-item routerLink="" (click)="onToggleClose()">
+    <p mat-list-item  (click)="onToggleClose()">
         <mat-icon>close</mat-icon>
     </p>
 
+    <div class="search-box">
+        <input class="search-text" type="text" name="search" placeholder="type to search">
+        <a class="search-btn">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
     
     <a mat-list-item routerLink="" (click)="onToggleClose()">
         <mat-icon>home</mat-icon>
         <span>Home</span>
     </a>
-    <a mat-list-item routerLink="" (click)="onToggleClose()">
+    <a mat-list-item routerLink="/find-job" (click)="onToggleClose()">
         <mat-icon>search</mat-icon>
         <span>Find A Job</span>
     </a>
-    <a mat-list-item routerLink="" (click)="onToggleClose()">
+    <a mat-list-item routerLink="/about" (click)="onToggleClose()">
         <mat-icon>account_circle</mat-icon>
         <span>About</span>
     </a>
-    <a mat-list-item routerLink="" (click)="onToggleClose()">
+    <a mat-list-item routerLink="/jobseekers" (click)="onToggleClose()">
         <mat-icon>people</mat-icon>
         <span>Jobseekers</span>
     </a>
-    <a mat-list-item routerLink="" (click)="onToggleClose()">
+    <a mat-list-item routerLink="/employers" (click)="onToggleClose()">
         <mat-icon>people_alt</mat-icon>
         <span>Employers</span>
     </a>
 
-    <a mat-list-item routerLink="" (click)="onToggleClose()">
+    <a mat-list-item routerLink="/contact" (click)="onToggleClose()">
         <mat-icon>mail</mat-icon>
         <span>Contact Us</span>
     </a>
 
     <mat-divider></mat-divider>
-    <a mat-list-item routerLink="" (click)="onToggleClose()">
+    <a mat-list-item routerLink="/user/login" (click)="onToggleClose()">
         <mat-icon></mat-icon>
         <span>LOGIN</span>
     </a>
-    <a mat-list-item routerLink="" (click)="onToggleClose()">
+    <a mat-list-item routerLink="/user/register" (click)="onToggleClose()">
         <mat-icon></mat-icon>
         <span>REGISTER</span>
     </a>
@@ -46,4 +52,30 @@
     <a mat-list-item routerLink="" (click)="onToggleClose()">
         <span>POST A JOB</span>
     </a>
+
+    <div class="contactSocial" fxLayout="row"  fxLayoutAlign="left left">
+        <ul>
+            <li>
+                <a href="">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+
+        </ul>
+        
+    </div>
+
+    
 </mat-nav-list>

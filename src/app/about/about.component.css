@@ -1,0 +1,24 @@
+.container{
+    margin-top: 50px;
+}
+img{
+    max-width: 100%;
+    max-height: auto;
+}
+
+.about{
+    padding: 20px;
+    background: white;
+    color: black;
+}
+
+
+.mission{
+    padding: 20px;
+    background: white;
+
+}
+
+#ourmission{
+    margin-bottom: 20px;
+}

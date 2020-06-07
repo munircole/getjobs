@@ -1,0 +1,12 @@
+<div *ngIf="isPostsLoaded" class="user-posts-container">
+    <div *ngFor="let userPost of userPosts" class="posts-div">
+        <p class="post-user">{{userPost.post.postedByUserId}}</p>
+        <p class="post-time">{{userPost.post.postCreatedOn}}</p>
+        <hr class="post-hr">
+        <p class="post-msg">{{userPost.post.postDetails}}</p>
+        <div *ngIf="userPost.post.hasImages" id="post-img" [ngStyle]="{'background-image':'url('+getFormattedImageData(userPost.postImageData)+')'}"></div>
+    </div>
+</div>
+<div *ngIf="!isPostsLoaded">
+    <p>No Posts to Load</p>
+</div>

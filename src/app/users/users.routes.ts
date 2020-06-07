@@ -15,6 +15,5 @@ export const usersRoutes = [
     { path: 'reset-password', component: ResetPasswordComponent},
     { path: 'profile', component: JobSeekerProfileComponent},
     { path: 'profile/dashboard', component: JobSeekerDashboardComponent},
-    { path: 'reset-passord', component: ResetPasswordComponent},
     { path: 'change-password', component: ChangePasswordComponent}
 ]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router'
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -10,23 +11,20 @@ import { Router } from '@angular/router'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  mouseoverLogin
   loginForm: FormGroup;
-  invalidLogin: boolean = false;
+  currentUser: object = {};
 
-  public form = {
-    email:null,
-    password:null
-
-  };
-
-  constructor(private router:Router, private formBuilder: FormBuilder) { }
+  constructor(private router:Router, private formBuilder: FormBuilder, private authService: AuthService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required])],
       password: ['', Validators.required]
     });
+  }
+
+  login(){
+    this.authService.login(this.loginForm.value)
   }
 
 }

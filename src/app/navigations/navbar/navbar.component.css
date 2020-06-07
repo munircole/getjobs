@@ -17,15 +17,6 @@ button{
     display: none;
 }
 
-.large-sign-in mat-icon{
-    display: none;
-}
-
-.large-sign-up mat-icon{
-    display: none;
-}
-
-
 
 .menu-div{
     margin-right:8px; 
@@ -33,7 +24,7 @@ button{
 
 .menu-div  a{
     text-decoration: none;
-    color: green;
+    color: black;
 }
 .menu-span{
     padding-left: 5px;
@@ -43,17 +34,17 @@ button{
 .post-job{
     height:40px;
     width:200px;
-    color: white;
-    border:1px solid green;
+    color: green;
+    border:1px solid white;
     text-transform: uppercase;
-    background-color: green;
+    background-color: white;
     border-radius: 30px;
     cursor: pointer;
     margin-left:50px;
 }
 
 .post-job a{
-    color: white;
+    color: green;
 }
 .post-job-container{
     display: none;

@@ -23,8 +23,8 @@ export class RateUsComponent implements OnInit {
 
   ngOnInit() {
     this.rateUsForm = this.formBuilder.group({
-      rate:['', Validators.required],
-      message: ['', Validators.required],
+      rate: ['', Validators.required],
+      message: ['', Validators.compose([Validators.required, Validators.maxLength(200)])],
       email: ['', Validators.compose([Validators.required])],
     });
   }

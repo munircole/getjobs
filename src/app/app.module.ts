@@ -1,26 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 import {MaterialModule } from './material.module';
 import {RouterModule} from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
-import { ComponentsModule } from './components/components.module';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
+import { ComponentsModule } from './components/components.module';
+import { ConnectLayoutModule } from './layout/connect-layout/connect-layout.module';
 import { UsersService } from './services/users.service';
 
 
-import { ConfirmEqualValidatorDirective } from './directives/confirm-equal.directive';
 
-
+import {UserModule} from './users/users.module';
 
 
 import { appRoutes } from "./app.routes";
@@ -41,6 +39,7 @@ import { CompaniesListComponent } from './companies/companies-list/companies-lis
 import { CompaniesThumbnailComponent } from './companies/companies-thumbnail/companies-thumbnail.component';
 import { CompaniesDetailComponent } from './companies/companies-detail/companies-detail.component';
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
+import { ConnectLayoutComponent } from './layout/connect-layout/connect-layout.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
@@ -48,6 +47,7 @@ import { JobseekersComponent } from './jobseekers/jobseekers.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { FaqComponent } from './faq/faq.component';
 import { RateUsComponent } from './rate-us/rate-us.component';
+import { FindJobComponent } from './find-job/find-job.component';
 
 
 @NgModule({
@@ -67,14 +67,15 @@ import { RateUsComponent } from './rate-us/rate-us.component';
     CompaniesThumbnailComponent,
     CompaniesDetailComponent,
     DashboardLayoutComponent,
-    ConfirmEqualValidatorDirective,
+    ConnectLayoutComponent,
     ContactUsComponent,
     TermsAndConditionsComponent,
     PrivacyPolicyComponent,
     JobseekersComponent,
     PricingComponent,
     FaqComponent,
-    RateUsComponent  
+    RateUsComponent,
+    FindJobComponent  
 
   ],
   imports: [
@@ -88,11 +89,17 @@ import { RateUsComponent } from './rate-us/rate-us.component';
     NgxSpinnerModule,
     NgbModule,
     ComponentsModule,
+    UserModule,
     RouterModule.forRoot(appRoutes)
 
   ],
   providers: [
-    UsersService
+    UsersService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

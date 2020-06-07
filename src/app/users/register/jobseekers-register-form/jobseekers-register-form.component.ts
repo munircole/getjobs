@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UsersService } from 'src/app/services/users.service';
-import  {Router} from '@angular/router';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { Jobseeker} from '../../../model/jobseeker';
+import { AuthService } from '../../../services/auth.service';
+
 
 @Component({
   selector: 'app-jobseekers-register-form',
@@ -11,50 +11,109 @@ import { Jobseeker} from '../../../model/jobseeker';
   styleUrls: ['./jobseekers-register-form.component.css']
 })
 export class JobseekersRegisterFormComponent implements OnInit {
+  registered = false;
+  submitted = false;
+  registerFailed = false;
+  errorMessage = '';
+
   jobseekersForm: FormGroup;
-  constructor(private apiService: UsersService, private router: Router, private spinner: NgxSpinnerService) {
+  constructor(private formBuilder: FormBuilder, private apiService: AuthService, private router: Router, private spinner: NgxSpinnerService) {
   }
 
-  showSpinner(){
+  invalidFirstName() {
+    return (this.submitted && this.jobseekersForm.controls.firstName.errors != null);
+  };
+  invalidLastName() {
+    return (this.submitted && this.jobseekersForm.controls.lastName.errors != null);
+  }
+  invalidEmail() {
+    return (this.submitted && this.jobseekersForm.controls.email.errors != null);
+  }
+  invalidContact_number() {
+    return (this.submitted && this.jobseekersForm.controls.contact_number.errors != null);
+  }
+  invalidGender() {
+    return (this.submitted && this.jobseekersForm.controls.gender.errors != null);
+  }
+  invalidDOB() {
+    return (this.submitted && this.jobseekersForm.controls.dob.errors != null);
+  }
+  invalidCountry() {
+    return (this.submitted && this.jobseekersForm.controls.country.errors != null);
+  }
+  invalidState() {
+    return (this.submitted && this.jobseekersForm.controls.state.errors != null);
+  }
+
+  invalidQualification() {
+    return (this.submitted && this.jobseekersForm.controls.qualification.errors != null);
+  }
+  invalidProfession() {
+    return (this.submitted && this.jobseekersForm.controls.profession.errors != null);
+  }
+  invalidPassword() {
+    return (this.submitted && this.jobseekersForm.controls.password.errors != null);
+  }
+  invalidConfirmPassword() {
+    return (this.submitted && this.jobseekersForm.controls.confirmPassword.errors != null);
+  }
+
+  checkpassword() {
+    return (this.jobseekersForm.controls.confirmPassword.value != this.jobseekersForm.controls.password.value);
+  }
+
+
+  showSpinner() {
     this.spinner.show();
   }
 
   ngOnInit() {
-    this.initForm();
+    this.jobseekersForm = this.formBuilder.group({
+      id: [''],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      otherName: [''],
+      email: ['', Validators.required],
+      gender: ['', Validators.required],
+      dob: ['', Validators.required],
+      country: ['', Validators.required],
+      state: ['', Validators.required],
+      contact_number: ['', Validators.required],
+      qualification: ['', Validators.required],
+      profession: ['', Validators.required],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+      confirmPassword: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+      allow_mail: [''],
+
+    });
 
     setTimeout(() => {
       this.spinner.hide();
     }, 5000);
   }
 
-  private initForm(){
-    this.jobseekersForm = new FormGroup({
-      'firstName': new FormControl('', Validators.required),
-      'lastName': new FormControl('', Validators.required),
-      'otherName': new FormControl('', Validators.required),
-      'email': new FormControl('', Validators.required),
-      'gender': new FormControl('', Validators.required),
-      'dob': new FormControl('', Validators.required),
-      'country': new FormControl('', Validators.required),
-      'state': new FormControl('', Validators.required),
-      'contact_number': new FormControl('', Validators.required),
-      'qualification': new FormControl('', Validators.required),
-      'profession': new FormControl('', Validators.required),
-      'password': new FormControl('',[ Validators.required, Validators.minLength(8)]),
-      'confirmPassword': new FormControl('',[ Validators.required, Validators.minLength(8)]),
-      'allow_mail': new FormControl(''),
-    })
+  onSubmit() {
+    this.submitted = true;
 
-  }
+    if (this.jobseekersForm.invalid == true) {
+      this.apiService.createJobseeker(this.jobseekersForm.value).subscribe(
+        data => {
+          console.log(data);
+          this.registered = true;
+          this.spinner.hide();
+        },
 
-  onSubmit(){
-    this.apiService.CreateJobseeker(this.jobseekersForm.value).subscribe((jobseeker: Jobseeker) =>{
-      console.log("registered, ", jobseeker);
-      this.spinner.hide();
-      //this.router.navigate(['user/login'])
-    });
+        err => {
+          this.errorMessage = err.error.message;
+          this.registerFailed = true;
+          this.spinner.hide();
 
-  }
+        }
+      );
+    }
+
+  };
+
 
 }
 

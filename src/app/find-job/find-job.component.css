@@ -1,0 +1,33 @@
+.search-div{
+    background-color: white;
+    margin: 30px;
+    width: 90%;
+    border-radius: 15px;
+    padding-top: 20px;
+}
+
+.search{
+    margin-left: 25px;
+    width: 30%;
+    color: black;
+    
+}
+
+.mobile-form-field, .minitab-form-field{
+    width:80%;
+}
+
+
+.search-button{
+    height:50px;
+    width:150px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    margin-bottom:15px;
+    border-radius: 8px;
+    margin-left:30px;
+    cursor: pointer;
+    
+}

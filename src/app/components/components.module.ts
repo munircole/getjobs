@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardSidebarComponent } from './sidebar/dashboard-sidebar.component';
 import { DashboardNavbarComponent } from './navbar/dashboard-navbar.component';
 import { DashboardFooterComponent } from './footer/dashboard-footer.component';
+import { ConnectSidebarComponent } from './connect-sidebar/connect-sidebar.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -15,12 +16,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     DashboardFooterComponent,
     DashboardNavbarComponent,
-    DashboardSidebarComponent
+    DashboardSidebarComponent,
+    ConnectSidebarComponent
   ],
   exports: [
     DashboardFooterComponent,
     DashboardNavbarComponent,
-    DashboardSidebarComponent
+    DashboardSidebarComponent,
+    ConnectSidebarComponent
   ]
 })
 export class ComponentsModule { }

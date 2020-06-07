@@ -10,19 +10,19 @@
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="firstName">First Name:</label>
-            <input (ngModel)="firstName" formControlName="firstName" id="firstName" type="text" class="form-control"
+            <input  formControlName="firstName" id="firstName" type="text" class="form-control"
               placeholder="First Name..." required />
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="lastName">Last Name:</label>
-            <input (ngModel)="lastName" formControlName="lastName" id="lastName" type="text" class="form-control"
+            <input  formControlName="lastName" id="lastName" type="text" class="form-control"
               placeholder="First Name..." required />
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="otherName">Other Name:</label>
-            <input (ngModel)="otherName" formControlName="otherName" id="otherName" type="text" class="form-control"
+            <input  formControlName="otherName" id="otherName" type="text" class="form-control"
               placeholder="other Names..." required />
           </div>
 
@@ -32,13 +32,13 @@
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="email">Email:</label>
-            <input (ngModel)="email" formControlName="email" id="email" type="email" class="form-control"
+            <input formControlName="email" id="email" type="email" class="form-control"
               placeholder="Email..." required />
           </div>
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="contact_number">mobile number:</label>
-            <input (ngModel)="contact_number" required formControlName="contact_number" id="contact_number"
+            <input  required formControlName="contact_number" id="contact_number"
               type="number" class="form-control" />
             <small id="phone-hint" class="hint">please include country code</small>
           </div>
@@ -49,7 +49,7 @@
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="gender">Gender:</label>
-            <select (ngModel)="gender" formControlName="gender" id="gender" type="gender" class="form-control"
+            <select  formControlName="gender" id="gender" type="gender" class="form-control"
               placeholder="select.." required>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -58,7 +58,7 @@
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="company_position">Company Position:</label>
-            <input (ngModel)="company_position" required formControlName="company_position" id="company_position"
+            <input  required formControlName="company_position" id="company_position"
               type="text" class="form-control" />
             <small id="position-hint" class="hint">Please state your position in the Company</small>
           </div>
@@ -79,13 +79,13 @@
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="company_name">Company Name:</label>
-            <input (ngModel)="company_name" required formControlName="company_name" id="company_name" type="text"
+            <input  required formControlName="company_name" id="company_name" type="text"
               class="form-control" />
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="Nationality">Country:</label>
-            <select (ngModel)="country" formControlName="country" id="country" type="text" class="form-control"
+            <select  formControlName="country" id="country" type="text" class="form-control"
               placeholder="Nationality..." required>
               <option value="nigeria">Nigeria</option>
             </select>
@@ -93,7 +93,7 @@
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="state">State:</label>
-            <select (ngModel)="state" formControlName="state" id="state" type="text" required class="form-control"
+            <select  formControlName="state" id="state" type="text" required class="form-control"
               placeholder="state...">
               <option value="edo">Edo state</option>
             </select>
@@ -104,13 +104,13 @@
 
           <div class="form-group col-lg-7 col-sm-12">
             <label for="address">Company Address:</label>
-            <input (ngModel)="address" required formControlName="address" id="address" type="text"
+            <input required formControlName="address" id="address" type="text"
               class="form-control" />
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="industry">Industry:</label>
-            <input (ngModel)="industry" required formControlName="industry" id="industry" type="text"
+            <input  required formControlName="industry" id="industry" type="text"
               class="form-control" />
           </div>
 
@@ -119,13 +119,13 @@
         <div class="row">
           <div class="form-group col-lg-5 col-sm-12">
             <label for="company_description">Company Description:</label>
-            <textarea (ngModel)="company_description" required formControlName="company_description"
+            <textarea  required formControlName="company_description"
               id="company_description" type="textarea" class="form-control"></textarea>
           </div>
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="company_website">Company's Website:</label>
-            <input (ngModel)="company_website" formControlName="company_website" id="company_website" type="url"
+            <input formControlName="company_website" id="company_website" type="url"
               class="form-control" />
             <small id="website-hint" class="hint">Optional</small>
 
@@ -136,18 +136,15 @@
         <div class="row">
           <div class="form-group col-lg-5 col-sm-12">
             <label for="password">password:</label>
-            <input (ngModel)="password" required formControlName="password" id="password" type="password"
+            <input required formControlName="password" id="password" type="password"
               class="form-control" />
             <small id="password-hint" class="hint">minimum of 8 characters</small>
           </div>
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="confirmPassword">Confirm password:</label>
-            <input required appConfirmEqualValidator="password" formControlName="confirmPassword" id="confirmPassword"
+            <input required  formControlName="confirmPassword" id="confirmPassword"
               type="password" class="form-control" />
-            <span class="help-block">
-              passwords do not match
-            </span>
           </div>
         </div>
 
@@ -155,7 +152,7 @@
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="company_logo">Company's Logo:</label>
-            <input (ngModel)="company_logo" formControlName="company_logo" id="company_logo" type="file"
+            <input  formControlName="company_logo" id="company_logo" type="file"
               class="form-control" />
           </div>
 

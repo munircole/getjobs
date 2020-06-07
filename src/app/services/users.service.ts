@@ -1,20 +1,43 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Jobseeker } from '../model/jobseeker';
+import { HttpClient, HttpHeaders, HttpHeaderResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+
+
 
 
 @Injectable({
     providedIn: "root"
 })
 
+
+
 export class UsersService{
+
+    endpoint: string = 'http://localhost:4000/api/access';
+
     constructor(private http: HttpClient){}
-    baseUrl = 'http://localhost/getjobs/php/';
 
-    CreateJobseeker(jobseeker: Jobseeker): Observable<Jobseeker>{
-        return this.http.post<Jobseeker>(`${this.baseUrl}/jobseekerreg.php`, jobseeker);
-
-
+    getPublicContent(): Observable<any> {
+        return this.http.get(this.endpoint + 'all', {responseType: 'text'});
     }
+    
+    
+    getJobseekerContent(): Observable<any> {
+        return this.http.get(this.endpoint + 'jobseeker', {responseType: 'text'});
+    }
+
+    
+    getEmployerContent(): Observable<any> {
+        return this.http.get(this.endpoint + 'employer', {responseType: 'text'});
+    }
+    
+    getModeratorContent(): Observable<any> {
+        return this.http.get(this.endpoint + 'mod', {responseType: 'text'});
+    }
+    
+    getAdminContent(): Observable<any> {
+        return this.http.get(this.endpoint + 'admin', {responseType: 'text'});
+    }
+    
+    
 }
