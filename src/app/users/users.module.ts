@@ -5,6 +5,7 @@ import { RouterModule,  } from '@angular/router'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../../app/material.module';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule} from 'ngx-toastr';
 
 
 import { UsersService } from '../services/users.service';
@@ -29,6 +30,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
         FlexLayoutModule,
         MaterialModule,
         NgxSpinnerModule,
+        ToastrModule,
         RouterModule.forChild(usersRoutes)
     ],
 

@@ -5,7 +5,6 @@ import { RouterModule,  } from '@angular/router'
 
 import { connectLayoutRoutes } from './connect-layout.routes';
 
-import { ConnectLayoutComponent } from './connect-layout.component';
 import {FormsModule} from '@angular/forms';
 import { SideHeaderComponent } from '../../getjobs-connect/side-header/side-header.component';
 import { DockerComponent } from '../../getjobs-connect/docker/docker.component';
@@ -28,6 +27,7 @@ import { TopicListComponent } from '../../getjobs-connect/discussions/topic/show
 import { TopicItemComponent } from '../../getjobs-connect/discussions/topic/show-topic/topic-list/topic-item/topic-item.component';
 import { TopicService } from '../../getjobs-connect/discussions/topic/topic.service';
 import {HttpClientModule} from '@angular/common/http';
+import { AuthenticateService} from '../../getjobs-connect/authenticate/authenticate.service';
 import {AuthenticateGuard} from '../../getjobs-connect/guards/authenticate.guard';
 import { AboutComponent } from '../../getjobs-connect/profile/about/about.component';
 import { FriendsComponent } from '../../getjobs-connect/profile/friends/friends.component';
@@ -35,7 +35,8 @@ import { PhotosComponent } from '../../getjobs-connect/profile/photos/photos.com
 import { ProfilePostsComponent } from '../../getjobs-connect/profile/profile-posts/profile-posts.component';
 import { ProfileService } from '../../getjobs-connect/profile/profile.service';
 import { SearchComponent } from '../../getjobs-connect/search/search.component';
-import {AuthenticateService} from '../../getjobs-connect/authenticate/authenticate.service';
+import { GroupChatComponent } from '../../getjobs-connect/group-chat/group-chat.component';
+import { ChatComponent } from '../../getjobs-connect/private-chat/chat.component';
 
 
 @NgModule({
@@ -62,7 +63,9 @@ import {AuthenticateService} from '../../getjobs-connect/authenticate/authentica
     FriendsComponent,
     PhotosComponent,
     ProfilePostsComponent,
-    SearchComponent
+    SearchComponent,
+    GroupChatComponent,
+    ChatComponent,
   ],
   imports: [
     CommonModule,
@@ -71,13 +74,12 @@ import {AuthenticateService} from '../../getjobs-connect/authenticate/authentica
     RouterModule.forChild(connectLayoutRoutes)
 
   ],
-  providers: [
+  providers: [ AuthenticateService,
               AuthenticateGuard,
               PostServices,
               TopicService,
               ProfileService,
               PostFeedbackService,
-              AuthenticateService
             ],
 })
 export class ConnectLayoutModule { }

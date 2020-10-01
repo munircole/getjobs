@@ -1,0 +1,82 @@
+.header{
+    background: url(../../../assets/images/company-header.jpeg) no-repeat;
+    background-size: cover;
+    height: 150px;
+}
+img{
+    width: 120px;
+    height: 120px;
+}
+.head{
+    margin-left: 7%;
+    margin-right: 7%;
+    background: white;
+    transform: translate(0px, 80px);
+    margin-bottom: 20px;
+    padding: 10px;
+
+
+}
+.short-button{
+    height:50px;
+    width: 250px;
+    color: white;
+    border: none;
+    background-color: green;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+
+
+.body{
+    margin-top: 150px;
+    background: white;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+
+.ads{
+    margin-left: 20px;
+}
+
+@media only screen and (max-width:700px){
+    .body{
+        margin-top: 50%;
+    }
+    
+    img{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+
+.jobs{
+    margin-top: 25px;
+}
+
+.similar-companies{
+    margin-top: 25px;
+}
+
+#thumbnail{
+    margin-top: 30px;
+    background: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.experience{
+    color: green;
+}
+
+.salary{
+    color: firebrick;
+}
+
+.createdAt{
+    float: right;
+}

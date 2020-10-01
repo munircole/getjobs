@@ -1,1 +1,77 @@
-<p>create-jobs works!</p>
+<div>
+    <div class="post-job">
+        <h2>Post A Job</h2>
+        <div class="contactForm" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="center center">
+            <div class="col-lg-6 col-sm-12">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+                    <div class="form-group">
+                        <label>Job Title</label>
+                        <input name="job_title" required id="job_title" type="text" formControlName="job_title"
+                            class="form-control" required />
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input name="location" required id="location" type="text" formControlName="location"
+                            class="form-control" placeholder="E.g: Auchi, Edo state, Nigeria" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select formControlName="job_category" id="job_category" type="text" class="form-control"
+                            required>
+                            <option value="">..select..</option>
+                            <option value="Software development">Software development</option>
+                            <option value="Education">Education</option>
+                            <option value="it">IT</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-5 col-sm-12">
+                            <label>Expected Budget</label>
+                            <input name="salary" required id="salary" type="text" formControlName="location"
+                                class="form-control" placeholder="E.g: $50, 000 per year" required />
+                        </div>
+
+                        <div class="form-group col-lg-5 col-sm-12">
+                            <label>Expires/Deadline</label>
+                            <input name="deadline" required id="deadline" type="date" formControlName="deadline"
+                                class="form-control" required />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Job Type</label>
+                        <select formControlName="job_type" id="job_type" type="text" class="form-control" required>
+                            <option value="">..select..</option>
+                            <option value="Full Time">Full Time</option>
+                            <option value="Part Time">Part Time</option>
+                            <option value="Contract">Contract</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Responsibilities</label>
+                        <textarea name="responsibilities" required id="responsibilities" type="text"
+                            formControlName="responsibilities" class="form-control" required></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Job description</label>
+                        <textarea name="job_description" required id="job_description" type="text"
+                            formControlName="job_description" class="form-control" required></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="button">Post Job</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

@@ -10,7 +10,7 @@
       <img src="./assets/img/brand/red.png" class="navbar-brand-img" alt="...">
     </a> -->
     <!-- User -->
-    <ul class="nav align-items-center d-md-none">
+    <!--<ul class="nav align-items-center d-md-none">
       <li class="nav-item" ngbDropdown placement="bottom-right">
         <a class="nav-link nav-link-icon" role="button" ngbDropdownToggle>
           <i class="ni ni-bell-55"></i>
@@ -57,15 +57,15 @@
           </a>
         </div>
       </li>
-    </ul>
+    </ul>-->
     <!-- Collapse -->
     <div class="collapse navbar-collapse"  [ngbCollapse]="isCollapsed" id="sidenav-collapse-main">
       <!-- Collapse header -->
       <div class="navbar-collapse-header d-md-none">
         <div class="row">
           <div class="col-6 collapse-brand">
-            <a  routerLinkActive="active" [routerLink]="['/dashboard']">
-              <img src="./assets/img/brand/blue.png">
+            <a  routerLinkActive="active" [routerLink]="['/connect']">
+              <h3>GJ-Connect</h3>
             </a>
           </div>
           <div class="col-6 collapse-close">
@@ -90,7 +90,7 @@
       <!-- Navigation -->
       <ul class="navbar-nav">
           <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-              <a routerLinkActive="active" [routerLink]="[menuItem.path]" class="nav-link">
+              <a [routerLink]="[menuItem.path]" class="nav-link">
                   <i class="ni {{menuItem.icon}}"></i>
                   {{menuItem.title}}
               </a>

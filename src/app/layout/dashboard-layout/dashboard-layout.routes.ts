@@ -6,6 +6,7 @@ import { InterviewComponent } from '../../dashboard-pages/interview/interview.co
 import { JobSeekersComponent} from '../../dashboard-pages/job-seekers/job-seekers.component';
 import { UserProfileComponent } from '../../dashboard-pages/user-profile/user-profile.component';
 import { SendMailComponent } from '../../dashboard-pages/send-mail/send-mail.component';
+import { CreateJobsComponent} from '../../jobs/create-jobs/create-jobs.component';
 
 
 export const DashboardLayoutRoutes = [
@@ -16,5 +17,6 @@ export const DashboardLayoutRoutes = [
     { path: 'billing',        component: BillingComponent },
     { path: 'Job-Seekers',    component: JobSeekersComponent},
     { path: 'user-profile', component: UserProfileComponent},
-    { path: 'send-mail', component: SendMailComponent}
+    { path: 'send-mail', component: SendMailComponent},
+    { path: 'post-jobs', component: CreateJobsComponent}
 ]

@@ -7,6 +7,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTreeModule} from '@angular/material/tree';
 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
@@ -25,7 +26,8 @@ import {MatStepperModule} from '@angular/material/stepper';
         MatDividerModule,
         MatCardModule,
         MatStepperModule,
-        MatInputModule 
+        MatInputModule,
+        MatTreeModule
         
 
     ],
@@ -40,7 +42,8 @@ import {MatStepperModule} from '@angular/material/stepper';
         MatDividerModule,
         MatCardModule,
         MatStepperModule,
-        MatInputModule 
+        MatInputModule,
+        MatTreeModule
 
     ]
 })

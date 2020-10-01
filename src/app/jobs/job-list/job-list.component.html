@@ -1,1 +1,41 @@
-<p>job-list works!</p>
+<div class="container">
+    <h1>Recent Jobs</h1>
+    <div><h3>Filter by:</h3></div>
+    <div class="search-div" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap.gt.xs="2%"
+        fxLayoutAlign="center center" ngClass.xs="mobile-container" ngClass.sm="minitab-container">
+        <div class="form-group col-lg-4 col-md-4 col-sm-12">
+            <input required id="job_title" type="text" class="form-control" placeholder="job title..." />
+        </div>
+
+        <div class="form-group col-lg-4 col-md-4 col-sm-12">
+            <select id="location" type="text" class="form-control"  >
+                <option value="software developer"></option>
+            </select>
+        </div>
+
+        <div class="form-group col-lg-4 col-md-4 col-sm-12">
+            <select id="location" type="text" class="form-control" placeholder="Select location..">
+                <option value="software developer">software developer</option>
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-6" *ngFor="let job of jobs.slice().reverse()">
+            <div [routerLink]="['/jobs',job.id]" class="well hoverwell thumbnail" id="thumbnail">
+                <p class="createdAt">{{job.createdAt | dateAgo}}</p>
+                <h4 class="job_title">{{job.job_title}}</h4>
+                <div class="e_name">{{job.employer_name}}</div>
+                <div class="experience">Experience: {{job.experience}}</div>
+                <div class="job_type">{{job.job_type}}</div>
+                <div class="salary">Salary: {{job.salary}}</div>
+                <div class="location">
+                    <span>Location: {{job.location}}</span>
+                </div>
+                <p>Deadline: {{job.deadline | date}}</p>
+            </div>
+        </div>
+    </div>
+</div>

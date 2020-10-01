@@ -3,18 +3,26 @@
     <hr>
     <div class="loginform" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="center center">
         <div class="col-lg-6 col-sm-12">
+            <div class="alert alert-danger" *ngIf="submitted && errorMessage">
+                login failed: {{errorMessage}}
+            </div>
+            <div class="alert alert-danger" *ngIf="submitted && loginError">
+                {{loginError}}
+            </div>
 
-            <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input  name="email" required id="email" type="text" class="form-control"
-                        placeholder="Email..." required />
+                    <input name="email" formControlName="email" required id="email" type="email" class="form-control" placeholder="Email..."
+                        required />
 
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input name="password" required id="password" type="password"
-                        class="form-control" placeholder="Password..." required />
+                    <input name="password" formControlName="password" required id="password" type="password" class="form-control"
+                        placeholder="Password..." required />
                 </div>
 
                 <div class="form-check">
@@ -28,9 +36,8 @@
 
 
 
-                <div class="button-div" fxLayout="row" fxLayoutAlign="center center" (mouseenter)="mouseoverLogin=true"
-                    (mouseleave)="mouseoverLogin=false">
-                    <button type="submit" class="button" [disabled]="!loginForm.valid">Login</button>
+                <div class="button-div" fxLayout="row" fxLayoutAlign="center center">
+                    <button type="submit" class="button">Login</button>
                 </div>
                 <p class="change_link1">
                     Dont have an account?
@@ -42,7 +49,3 @@
 
     </div>
 </div>
-
-
-
-

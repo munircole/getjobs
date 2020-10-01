@@ -9,20 +9,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ToastrModule } from "ngx-toastr";
 
 import { AuthInterceptor } from './helpers/auth.interceptor';
 
 import { ComponentsModule } from './components/components.module';
-import { ConnectLayoutModule } from './layout/connect-layout/connect-layout.module';
+import { DateAgoPipe} from './pipes/date-ago.pipe';
 import { UsersService } from './services/users.service';
-
-
-
+import { JobService } from '../app/jobs/shared/jobs.service';
+import { CompanyService } from './companies/shared/company.service';
 import {UserModule} from './users/users.module';
-
-
 import { appRoutes } from "./app.routes";
 
+import { JobListResolver } from './jobs/job-list/job-list.resolver';
 
 
 import { HomeComponent } from './home/home.component';
@@ -31,13 +30,10 @@ import { NavbarComponent } from './navigations/navbar/navbar.component';
 import { SidenavComponent } from './navigations/sidenav/sidenav.component';
 import { FooterComponent } from './navigations/footer/footer.component';
 import { JobListComponent } from './jobs/job-list/job-list.component';
-import { JobThumbnailComponent } from './jobs/job-thumbnail/job-thumbnail.component';
-import { CreateJobsComponent } from './jobs/create-jobs/create-jobs.component';
 import { JobDetailsComponent } from './jobs/job-details/job-details.component';
 import { JobApplyFormComponent } from './jobs/job-details/job-apply-form/job-apply-form.component';
 import { CompaniesListComponent } from './companies/companies-list/companies-list.component';
-import { CompaniesThumbnailComponent } from './companies/companies-thumbnail/companies-thumbnail.component';
-import { CompaniesDetailComponent } from './companies/companies-detail/companies-detail.component';
+import { CompanyDetailsComponent } from './companies/companies-detail/companies-detail.component';
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
 import { ConnectLayoutComponent } from './layout/connect-layout/connect-layout.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -59,13 +55,10 @@ import { FindJobComponent } from './find-job/find-job.component';
     SidenavComponent,
     FooterComponent,
     JobListComponent,
-    JobThumbnailComponent,
-    CreateJobsComponent,
     JobDetailsComponent,
     JobApplyFormComponent,
     CompaniesListComponent,
-    CompaniesThumbnailComponent,
-    CompaniesDetailComponent,
+    CompanyDetailsComponent,
     DashboardLayoutComponent,
     ConnectLayoutComponent,
     ContactUsComponent,
@@ -75,7 +68,8 @@ import { FindJobComponent } from './find-job/find-job.component';
     PricingComponent,
     FaqComponent,
     RateUsComponent,
-    FindJobComponent  
+    FindJobComponent,
+    DateAgoPipe
 
   ],
   imports: [
@@ -90,11 +84,15 @@ import { FindJobComponent } from './find-job/find-job.component';
     NgbModule,
     ComponentsModule,
     UserModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes)
 
   ],
   providers: [
     UsersService,
+    JobService,
+    CompanyService,
+    JobListResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

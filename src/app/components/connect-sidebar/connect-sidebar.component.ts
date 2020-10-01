@@ -9,11 +9,11 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     { path: '/connect', title: 'Posts',  icon: 'ni-tv-2 text-primary', class: '' },
-    { path: '/connect//discussions/topics/general', title: 'Forum',  icon:'ni-planet text-blue', class: '' },
-    { path: '/connet', title: 'Chatroom',  icon:'ni-pin-3 text-orange', class: '' },
-    { path: '/connect', title: 'Private Chat',  icon:'ni-single-02 text-yellow', class: '' },
-    { path: '/connect', title: ' Members Online', icon:'', class:''},
-    { path: '/connect', title: ' Top members', icon:'', class:''},
+    { path: '/connect/discussions/topics', title: 'Forum',  icon:'ni-planet text-blue', class: '' },
+    { path: '/connect/group-chat', title: 'Chatroom',  icon:'ni-pin-3 text-orange', class: '' },
+    { path: '/connect/chat', title: 'Private Chat',  icon:'ni-single-02 text-yellow', class: '' },
+    { path: '/connect/online-members', title: ' Members Online', icon:'', class:''},
+    { path: '/connect/top-members', title: ' Top members', icon:'', class:''},
 
 ];
 

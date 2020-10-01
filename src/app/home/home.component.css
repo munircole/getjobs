@@ -1,3 +1,4 @@
+/* header section*/
 .header-container{
     height:80vh;
     background: url(../../assets/images/header.jpeg) no-repeat;
@@ -95,6 +96,66 @@
     cursor: pointer;
     
 }
+
+/* recent jobs section*/
+
+#recent_jobs{
+    margin-top: 50px;
+}
+
+#thumbnail{
+    margin-top: 30px;
+    background: white;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+.experience{
+    color: green;
+}
+
+.salary{
+    color: firebrick;
+}
+
+.createdAt{
+    float: right;
+}
+
+
+.button{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height:50px;
+    width:200px;
+    color: white;
+    border:1px solid green;
+    text-transform: uppercase;
+    background-color: green;
+    border-radius: 30px;
+    cursor: pointer;
+    
+
+}
+
+/* company thumbnail */
+#company-thumbnail{
+    margin-top: 30px;
+    background: white;
+    padding: 10px;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+}
+
+.company-image{
+    width: 100px;
+    height: 100px;
+}
+
+
+/* feature section*/
 
 .feature-container{
     margin-top: 3%;

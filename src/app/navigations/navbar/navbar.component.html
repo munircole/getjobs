@@ -11,23 +11,72 @@
     </div>
     <div>
         <div fxLayout="row" fxLayout="row" fxLayoutAlign="right right" class="menu-div">
-            <button mat-button class="sign-in" ngClass.lg="large-sign-in" ngClass.xs="mobile-sign-in">
+            <button *ngIf="!isLoggedIn" mat-button class="sign-in" ngClass.lg="large-sign-in"
+                ngClass.xs="mobile-sign-in">
                 <a mat-button routerLink="/user/login">
                     <span class="menu-span">SIGN IN</span>
                 </a>
             </button>
 
-            <button mat-button class="sign-up" ngClass.lg="large-sign-up" ngClass.xs="mobile-sign-in">
+            <button *ngIf="!isLoggedIn" mat-button class="sign-up" ngClass.lg="large-sign-up"
+                ngClass.xs="mobile-sign-in">
                 <a mat-button routerLink="/user/register">
                     <span class="menu-span">SIGN UP</span>
                 </a>
             </button>
 
-            <button mat-button class="post-job" ngClass.xs="post-job-container"ngClass.sm="post-job-container">
+            <button *ngIf="!isLoggedIn" mat-button class="post-job" ngClass.xs="post-job-container"
+                ngClass.sm="post-job-container">
                 <a mat-button routerLink="#">
                     <span class="menu-span">POST A JOB</span>
                 </a>
             </button>
+
+            <button *ngIf="isLoggedIn" (click)="logout()" mat-button class="logout">
+                <span class="menu-span">Logout</span>
+            </button>
+
+            <ul *ngIf="isLoggedIn" class="navbar-nav align-items-center d-flex d-md-flex">
+                <li class="nav-item" ngbDropdown placement="bottom-right">
+                    <a class="nav-link pr-0" role="button" ngbDropdownToggle>
+                        <div class="media align-items-center">
+                            <span class="avatar avatar-sm rounded-circle">
+                                <img alt="Image placeholder" src="../../../assets/images/profile-pics.jpg">
+                            </span>
+                            <div class="media-body ml-2 d-none d-lg-block">
+                                <span class="mb-0 text-sm  font-weight-bold">Amina</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
+                        <div class=" dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Welcome!</h6>
+                        </div>
+                        <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+                            <i class="ni ni-single-02"></i>
+                            <span>My profile</span>
+                        </a>
+                        <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+                            <i class="ni ni-calendar-grid-58"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+                            <i class="ni ni-settings-gear-65"></i>
+                            <span>Settings</span>
+                        </a>
+                        
+                        <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+                            <i class="ni ni-support-16"></i>
+                            <span>Support</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#!" class="dropdown-item">
+                            <i class="ni ni-user-run"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
 
 
         </div>

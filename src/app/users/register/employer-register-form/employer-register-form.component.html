@@ -2,27 +2,36 @@
   <h1 class="text-center" id="header-text"> Create an Employer Account </h1>
   <p class="text-center">Get started to get the best candidates for your jobs</p>
 
-  <mat-horizontal-stepper labelPosition="bottom" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
+  <form [formGroup]="employerForm" (ngSubmit)="onSubmit()">
+      <div class="alert alert-danger" *ngIf="submitted && errorMessage">
+          registration failed {{errorMessage}}
+      </div>
+
+
+      <div class="alert alert-success" *ngIf="registered">
+          Your regristration was successful, Please login
+      </div>
+
+    <mat-horizontal-stepper linear>
+      <mat-step>
         <ng-template matStepLabel>Personal information</ng-template>
         <div class="row">
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="firstName">First Name:</label>
-            <input  formControlName="firstName" id="firstName" type="text" class="form-control"
+            <input formControlName="firstName" id="firstName" type="text" class="form-control"
               placeholder="First Name..." required />
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="lastName">Last Name:</label>
-            <input  formControlName="lastName" id="lastName" type="text" class="form-control"
-              placeholder="First Name..." required />
+            <input formControlName="lastName" id="lastName" type="text" class="form-control" placeholder="First Name..."
+              required />
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="otherName">Other Name:</label>
-            <input  formControlName="otherName" id="otherName" type="text" class="form-control"
+            <input formControlName="otherName" id="otherName" type="text" class="form-control"
               placeholder="other Names..." required />
           </div>
 
@@ -32,14 +41,13 @@
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="email">Email:</label>
-            <input formControlName="email" id="email" type="email" class="form-control"
-              placeholder="Email..." required />
+            <input formControlName="email" id="email" type="email" class="form-control" placeholder="Email..."
+              required />
           </div>
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="contact_number">mobile number:</label>
-            <input  required formControlName="contact_number" id="contact_number"
-              type="number" class="form-control" />
+            <input required formControlName="contact_number" id="contact_number" type="number" class="form-control" />
             <small id="phone-hint" class="hint">please include country code</small>
           </div>
 
@@ -49,8 +57,8 @@
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="gender">Gender:</label>
-            <select  formControlName="gender" id="gender" type="gender" class="form-control"
-              placeholder="select.." required>
+            <select formControlName="gender" id="gender" type="gender" class="form-control" placeholder="select.."
+              required>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
@@ -58,8 +66,7 @@
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="company_position">Company Position:</label>
-            <input  required formControlName="company_position" id="company_position"
-              type="text" class="form-control" />
+            <input required formControlName="company_position" id="company_position" type="text" class="form-control" />
             <small id="position-hint" class="hint">Please state your position in the Company</small>
           </div>
 
@@ -67,34 +74,30 @@
         </div>
 
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext type="button">Next</button>
         </div>
-      </form>
-    </mat-step>
+      </mat-step>
 
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
+      <mat-step>
         <ng-template matStepLabel>Company's information</ng-template>
         <div class="row">
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="company_name">Company Name:</label>
-            <input  required formControlName="company_name" id="company_name" type="text"
-              class="form-control" />
+            <input required formControlName="company_name" id="company_name" type="text" class="form-control" />
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="Nationality">Country:</label>
-            <select  formControlName="country" id="country" type="text" class="form-control"
-              placeholder="Nationality..." required>
+            <select formControlName="country" id="country" type="text" class="form-control" placeholder="Nationality..."
+              required>
               <option value="nigeria">Nigeria</option>
             </select>
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="state">State:</label>
-            <select  formControlName="state" id="state" type="text" required class="form-control"
-              placeholder="state...">
+            <select formControlName="state" id="state" type="text" required class="form-control" placeholder="state...">
               <option value="edo">Edo state</option>
             </select>
           </div>
@@ -104,14 +107,12 @@
 
           <div class="form-group col-lg-7 col-sm-12">
             <label for="address">Company Address:</label>
-            <input required formControlName="address" id="address" type="text"
-              class="form-control" />
+            <input required formControlName="address" id="address" type="text" class="form-control" />
           </div>
 
           <div class="form-group col-lg-4 col-sm-12">
             <label for="industry">Industry:</label>
-            <input  required formControlName="industry" id="industry" type="text"
-              class="form-control" />
+            <input required formControlName="industry" id="industry" type="text" class="form-control" />
           </div>
 
         </div>
@@ -119,14 +120,13 @@
         <div class="row">
           <div class="form-group col-lg-5 col-sm-12">
             <label for="company_description">Company Description:</label>
-            <textarea  required formControlName="company_description"
-              id="company_description" type="textarea" class="form-control"></textarea>
+            <textarea required formControlName="company_description" id="company_description" type="textarea"
+              class="form-control"></textarea>
           </div>
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="company_website">Company's Website:</label>
-            <input formControlName="company_website" id="company_website" type="url"
-              class="form-control" />
+            <input formControlName="company_website" id="company_website" type="url" class="form-control" />
             <small id="website-hint" class="hint">Optional</small>
 
           </div>
@@ -136,54 +136,38 @@
         <div class="row">
           <div class="form-group col-lg-5 col-sm-12">
             <label for="password">password:</label>
-            <input required formControlName="password" id="password" type="password"
-              class="form-control" />
+            <input required formControlName="password" id="password" type="password" class="form-control" />
             <small id="password-hint" class="hint">minimum of 8 characters</small>
           </div>
 
           <div class="form-group col-lg-5 col-sm-12">
             <label for="confirmPassword">Confirm password:</label>
-            <input required  formControlName="confirmPassword" id="confirmPassword"
-              type="password" class="form-control" />
+            <input required formControlName="confirmPassword" id="confirmPassword" type="password"
+              class="form-control" />
           </div>
         </div>
 
         <div class="row">
-
           <div class="form-group col-lg-5 col-sm-12">
             <label for="company_logo">Company's Logo:</label>
-            <input  formControlName="company_logo" id="company_logo" type="file"
-              class="form-control" />
+            <input formControlName="company_logo" id="company_logo" type="file" class="form-control" />
           </div>
-
-
         </div>
 
+        <ngx-spinner bdcolor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+          <p style="font-size:20px; color:white;">Processing....</p>
 
-
-
+        </ngx-spinner>
 
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperSubmit>Submit</button>
         </div>
-      </form>
-    </mat-step>
+      </mat-step>
 
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
-    </mat-step>
+    </mat-horizontal-stepper>
+  </form>
 
-  </mat-horizontal-stepper>
 
 
 </div>
-
-
-
-

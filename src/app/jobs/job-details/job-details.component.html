@@ -1,1 +1,57 @@
-<p>job-details works!</p>
+<div class="job-details">
+    <div class="header">
+        <h1 class="text-center">{{job.job_title}}</h1>
+        <p class="text-center">{{job.employer_name}}.</p>
+        <div class="text-center">
+            <span><i class="fa fa-map-marker"></i> {{job.location}}</span> &nbsp;
+            <span><i class="fa fa-clock"></i> {{job.experience}}</span> &nbsp;
+            <span><i class="fa fa-currency"></i> {{job.salary}}</span>
+        </div>
+        <div class="text-center">
+            <button routerLink="/jobs" type="submit" class="short-button">Apply Now</button>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="description">
+            <p>Job Description:</p>
+            <h6>{{job.job_description}}</h6>
+        </div>
+
+
+        <div class="info">
+            <p>Skills Required:</p>
+            <h6>{{job.job_skill}}</h6>
+        </div>
+
+        <div class="skills">
+            <p>Qualification:</p>
+            <h6>{{job.qualification}}</h6>
+        </div>
+
+
+        <div class="info">
+            <p>Job Type:</p>
+            <h6>{{job.job_type}}</h6>
+        </div>
+
+
+        <div class="info">
+            <p>Responsibilities:</p>
+            <h6>{{job.responsibilities}}</h6>
+        </div>
+
+        <div class="info">
+            <p>Deadline:</p>
+            <h6>{{job.deadline | date}}</h6>
+        </div>
+
+
+        <div class="text-center">
+            <button routerLink="/jobs" type="submit" class="button">Apply Now</button>
+        </div>
+
+    </div>
+</div>

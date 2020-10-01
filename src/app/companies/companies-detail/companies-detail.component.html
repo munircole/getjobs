@@ -1,1 +1,95 @@
-<p>companies-detail works!</p>
+<div class="company-details">
+    <div class="header">
+        <div class="head">
+            <div class="row">
+                <div class="text-center col-lg-2 col-sm-2">
+                    <img src="../../../assets/images/briefcase.jpg">
+                </div>
+                <div class="content col-lg-4 col-sm-9">
+                    <h3 class="text-center">{{employer.company_name}}</h3>
+                    <h6 class="text-center">location: {{employer.state}}, {{employer.country}}</h6>
+                    <h6 class="text-center"> Address: {{employer.address}}</h6>
+
+                </div>
+                <div class="content1 col-lg-4 col-sm-9">
+                    <p class="text-center">website: {{employer?.website}}</p>
+                    <div class="text-center">
+                        <button routerLink="/jobs" type="submit" class="short-button">Follow</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="body">
+                    <div class="about">
+                        <h3>About Us</h3>
+                        <p>Another aspect of self directed learning is the learning process which involves taking
+                            classes, reading, writing and applying knowledge to new situation and understanding the
+                            different approach to studying.
+                            For students to be successful in self directed learning, they should be able to engage
+                            themselves in self reflection, take initiative for all stages of their learning process and
+                            also be self motivated.
+
+                            Students in self directed learning should be autonomous, organized, self disciplined and
+                            also have the urge to earn new skills.
+
+                            My biggest strength as a student are creativity and the ability to learn new skills
+                            independently in an organized way. This strength will help me become a self directed learner
+                            in the sense that I am always ready to learn new things independently and also monitor my
+                            progress and motivate myself.
+
+                            My two biggest weakness as a student are poor communication to my course and program advisor
+                            and time management. I am not always able to communicate with my course and program advisor
+                            where I can get assistance and information about my courses, opportunities and many more and
+                            I think this will affect my readiness to be a self directed learner.
+
+                            I am also not able to manage my time on school work and my other daily routine, and I think
+                            it will affect my readiness to be a self directed learner because I wont have all the time
+                            to read, study, learn, write and also the time to write and complete assignments and task.
+
+                        </p>
+
+                    </div>
+
+                    <div class="jobs">
+                        <h3> Jobs from this Employer</h3>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6" *ngFor="let job of jobs.reverse()">
+                                <div [routerLink]="['/jobs',job.id]" class="well hoverwell thumbnail" id="thumbnail">
+                                    <p class="createdAt">{{job.createdAt | dateAgo}}</p>
+                                    <h4 class="job_title">{{job.job_title}}</h4>
+                                    <div class="e_name">{{job.employer_name}}</div>
+                                    <div class="experience">Experience: {{job.experience}}</div>
+                                    <div class="job_type">{{job.job_type}}</div>
+                                    <div class="salary">Salary: {{job.salary}}</div>
+                                    <div class="location">
+                                        <span>Location: {{job.location}}</span>
+                                    </div>
+                                    <p>Deadline: {{job.deadline | date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+
+                    <div class="similar-companies">
+                        <h3>Similar Employers</h3>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="ads col-lg-4">
+
+            </div>
+        </div>
+    </div>
+</div>

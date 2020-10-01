@@ -1,0 +1,39 @@
+<nav class="navbar my-navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span class="glyphicon glyphicon-search"></span>
+      <input id="home-search" type="text" value="" placeholder="Search...." (keydown)="searchForum($event)" [(ngModel)]="searchString">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right" *ngIf="!isUserLogged">
+        <li>
+            <a href="#" [routerLink] = "['/', 'auth', 'signup']" class="right-nav-icons">
+                <span class="glyphicon glyphicon-user"></span> Sign Up
+            </a>
+        </li>
+        <li>
+            <a href="#" [routerLink] = "['/', 'auth', 'login']" class="right-nav-icons">
+                <span class="glyphicon glyphicon-log-in"></span> Login
+            </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" *ngIf="isUserLogged">
+        <li>
+            <a href="#" [routerLink] = "['/']" class="right-nav-icons">
+                <span class="glyphicon glyphicon-user"></span> {{ userLoggedIn.lastName }} {{ userLoggedIn.firstName }}
+            </a>
+        </li>
+        <li>
+            <a (click)="logout()" class="right-nav-icons">
+                <span class="glyphicon glyphicon-log-in"></span> Logout
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

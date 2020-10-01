@@ -20,6 +20,7 @@ import { EmployersComponent } from '../../dashboard-pages/employers/employers.co
 import { InterviewComponent } from '../../dashboard-pages/interview/interview.component';
 import { JobSeekersComponent} from '../../dashboard-pages/job-seekers/job-seekers.component';
 import { SendMailComponent } from '../../dashboard-pages/send-mail/send-mail.component';
+import { CreateJobsComponent } from '../../jobs/create-jobs/create-jobs.component';
 
 @NgModule({
     imports:[
@@ -40,7 +41,8 @@ import { SendMailComponent } from '../../dashboard-pages/send-mail/send-mail.com
         InterviewComponent,
         JobSeekersComponent,
         UserProfileComponent,
-        SendMailComponent
+        SendMailComponent,
+        CreateJobsComponent
         
     ],
 

@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
 
-const TOKEN_HEADER_KEY = 'x-access-token';
 
 @Injectable()
 

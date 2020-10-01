@@ -6,13 +6,13 @@
         <div class="form">
             <form [formGroup]="jobseekersForm" (ngSubmit)="onSubmit()" autocomplete="off"
                 novalidate>
-                <div class="alert alert-success" *ngIf="jobseekersForm.submitted && registerFailed">
-                    registration failed {{errorMessage}}
+                <div class="alert alert-danger" *ngIf="registered && errorMessage">
+                    registration failed {{errorMessage.message}}
                 </div>
 
 
                 <div class="alert alert-success" *ngIf="registered">
-                    Your registration is successful!
+                    Your regristration was successful, Please login
                 </div>
                 <div class="row">
 
@@ -184,14 +184,4 @@
         </div>
     </div>
 
-    <div class="animation-area">
-        <ul class="box-area">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
 </div>

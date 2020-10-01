@@ -1,0 +1,51 @@
+.container{
+    margin-bottom: 50px;
+}
+.search-div{
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 15px;
+    padding-top: 20px;
+}
+
+.search{
+    margin-left: 25px;
+    width: 30%;
+    color: white;
+    
+}
+
+.mobile-container{
+    margin: 8px 16px;
+}
+.minitab-container{
+    margin-top: 3%;
+}
+
+.mobile-form-field, .minitab-form-field{
+    width:80%;
+}
+/* */
+
+
+
+
+
+
+.container{
+    margin-top: 50px;
+}
+
+#thumbnail{
+    margin-top: 30px;
+    background: white;
+    padding: 10px;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}

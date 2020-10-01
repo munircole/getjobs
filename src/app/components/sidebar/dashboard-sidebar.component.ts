@@ -12,6 +12,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard/jobs', title: 'Jobs',  icon:'ni-planet text-blue', class: '' },
     { path: '/dashboard/applications', title: 'Applications',  icon:'ni-pin-3 text-orange', class: '' },
     { path: '/dashboard/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' },
+    { path: '/dashboard/post-jobs', title: 'Post A Job', icon:'', class:''},
     { path: '/dashboard/send-mail', title: 'Send Mail', icon:'', class:''},
     { path: '/dashboard/sms', title: 'Send SMS', icon: '', class: ''},
     { path: '/dashboard/interview', title: 'Interview', icon: '', class: ''},

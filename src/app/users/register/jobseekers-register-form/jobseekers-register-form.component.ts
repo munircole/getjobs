@@ -14,7 +14,7 @@ export class JobseekersRegisterFormComponent implements OnInit {
   registered = false;
   submitted = false;
   registerFailed = false;
-  errorMessage = '';
+  errorMessage = [];
 
   jobseekersForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private apiService: AuthService, private router: Router, private spinner: NgxSpinnerService) {
@@ -94,23 +94,24 @@ export class JobseekersRegisterFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.errorMessage = null;
+    this.apiService.createJobseeker(this.jobseekersForm.value).subscribe(
+      data => {
+        console.log(data);
+        this.registered = true;
+        this.jobseekersForm.reset();
+        this.router.navigate(['user/login']);
 
-    if (this.jobseekersForm.invalid == true) {
-      this.apiService.createJobseeker(this.jobseekersForm.value).subscribe(
-        data => {
-          console.log(data);
-          this.registered = true;
-          this.spinner.hide();
-        },
 
-        err => {
-          this.errorMessage = err.error.message;
-          this.registerFailed = true;
-          this.spinner.hide();
+      },
+      err => {
+        this.errorMessage = err;
+        console.log(this.errorMessage);
+      }
 
-        }
-      );
-    }
+    );
+
+    this.spinner.hide();
 
   };
 
