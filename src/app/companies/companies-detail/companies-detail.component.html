@@ -6,13 +6,13 @@
                     <img src="../../../assets/images/briefcase.jpg">
                 </div>
                 <div class="content col-lg-4 col-sm-9">
-                    <h3 class="text-center">{{employer.company_name}}</h3>
-                    <h6 class="text-center">location: {{employer.state}}, {{employer.country}}</h6>
-                    <h6 class="text-center"> Address: {{employer.address}}</h6>
+                    <h3 class="text-center">{{employer?.company_name}}</h3>
+                    <h6 class="text-center">location: {{employer?.state}}, {{employer?.country}}</h6>
+                    <h6 class="text-center"> Address: {{employer?.state}}</h6>
 
                 </div>
                 <div class="content1 col-lg-4 col-sm-9">
-                    <p class="text-center">website: {{employer?.website}}</p>
+                    <p class="text-center">website: </p>
                     <div class="text-center">
                         <button routerLink="/jobs" type="submit" class="short-button">Follow</button>
                     </div>
