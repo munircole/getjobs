@@ -6,10 +6,6 @@
         <div class="form">
             <form [formGroup]="jobseekersForm" (ngSubmit)="onSubmit()" autocomplete="off"
                 novalidate>
-                <div class="alert alert-danger" *ngIf="registered && errorMessage">
-                    registration failed {{errorMessage.message}}
-                </div>
-
 
                 <div class="alert alert-success" *ngIf="registered">
                     Your regristration was successful, Please login

@@ -34,8 +34,6 @@ import { JobDetailsComponent } from './jobs/job-details/job-details.component';
 import { JobApplyFormComponent } from './jobs/job-details/job-apply-form/job-apply-form.component';
 import { CompaniesListComponent } from './companies/companies-list/companies-list.component';
 import { CompanyDetailsComponent } from './companies/companies-detail/companies-detail.component';
-import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
-import { ConnectLayoutComponent } from './layout/connect-layout/connect-layout.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
@@ -59,8 +57,6 @@ import { FindJobComponent } from './find-job/find-job.component';
     JobApplyFormComponent,
     CompaniesListComponent,
     CompanyDetailsComponent,
-    DashboardLayoutComponent,
-    ConnectLayoutComponent,
     ContactUsComponent,
     TermsAndConditionsComponent,
     PrivacyPolicyComponent,

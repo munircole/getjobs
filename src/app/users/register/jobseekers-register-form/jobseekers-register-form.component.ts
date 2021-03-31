@@ -14,7 +14,7 @@ export class JobseekersRegisterFormComponent implements OnInit {
   registered = false;
   submitted = false;
   registerFailed = false;
-  errorMessage = [];
+  errorMessage = '';
 
   jobseekersForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private apiService: AuthService, private router: Router, private spinner: NgxSpinnerService) {
